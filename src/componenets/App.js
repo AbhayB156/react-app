@@ -8,7 +8,7 @@ import AddContact from "./AddContact";
 import EditContacts from "./EditContacts";
 import ContactList from "./ContactList";
 import ContactDetails from './ContactDetails';
-import './App.css';
+// import './App.css';
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
