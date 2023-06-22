@@ -17,7 +17,7 @@ function App() {
   const [searchResults, setSearchResults] = useState("");
 
 const retriveContacts = async () => {
-  const response = await api.get('/contacts');
+  const response = await api.get('/');
   return response.data;
 };
 
@@ -28,13 +28,13 @@ const addContactHandler = async (contact) =>{
     ...contact,
   }
   
-  const response = await api.post("/contacts", request);
+  const response = await api.post("/", request);
   console.log(response);
   setContacts([...contacts, response.data]);
 };
 
 const updateContactHandler = async (contact) => {
-  const response = await api.put(`/contacts/${contact.id}`, contact)
+  const response = await api.put(`/${contact.id}`, contact)
   console.log(response.data);
   const {id,name,email}=response.data;
   setContacts(
@@ -44,7 +44,7 @@ const updateContactHandler = async (contact) => {
   );
 };
 const removeContactHandler = async (id) => {
-  await api.delete(`/contacts/${id}`);
+  await api.delete(`/${id}`);
   const newContactList = contacts.filter((contact) => {
     return contact.id !== id;
   });
