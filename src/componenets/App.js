@@ -17,7 +17,7 @@ function App() {
   const [searchResults, setSearchResults] = useState("");
 
 const retriveContacts = async () => {
-  const response = await api.get('/');
+  const response = await api.get('');
   return response.data;
 };
 
@@ -28,7 +28,7 @@ const addContactHandler = async (contact) =>{
     ...contact,
   }
   
-  const response = await api.post("/", request);
+  const response = await api.post("", request);
   console.log(response);
   setContacts([...contacts, response.data]);
 };
